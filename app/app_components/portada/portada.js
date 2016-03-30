@@ -1,4 +1,4 @@
-System.register(["angular2/core", "../portada_inicio/portadainicio", "../portada_informacion/portadainformacion", "../portada_preguntas/portadapreguntas", "../portada_contactenos/portadacontactenos"], function(exports_1) {
+System.register(["angular2/core", "../portada_inicio/portadainicio", "../portada_informacion/portadainformacion", "../portada_preguntas/portadapreguntas", "../portada_contactenos/portadacontactenos", "angular2/router"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(["angular2/core", "../portada_inicio/portadainicio", "../portada
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, portadainicio_1, portadainformacion_1, portadapreguntas_1, portadacontactenos_1;
+    var core_1, portadainicio_1, portadainformacion_1, portadapreguntas_1, portadacontactenos_1, router_1;
     var MoviesComponent;
     return {
         setters:[
@@ -26,6 +26,9 @@ System.register(["angular2/core", "../portada_inicio/portadainicio", "../portada
             },
             function (portadacontactenos_1_1) {
                 portadacontactenos_1 = portadacontactenos_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
             MoviesComponent = (function () {
@@ -33,14 +36,16 @@ System.register(["angular2/core", "../portada_inicio/portadainicio", "../portada
                 }
                 MoviesComponent = __decorate([
                     core_1.Component({
-                        directives: [
-                            portadainicio_1.PortadainicioComponent,
-                            portadainformacion_1.PortadaInformacionComponent,
-                            portadapreguntas_1.PortadaPreguntasComponent,
-                            portadacontactenos_1.PortadaContactoComponent],
                         selector: "app-portada",
-                        templateUrl: "./resource/view/layout/templatePortada.html"
-                    }), 
+                        templateUrl: "./resource/view/layout/templatePortada.html",
+                        directives: [router_1.ROUTER_DIRECTIVES]
+                    }),
+                    router_1.RouteConfig([
+                        { path: '/', as: 'Inicio', component: portadainicio_1.PortadainicioComponent, useDefault: true },
+                        { path: '/Informacion', as: 'Informacion', component: portadainformacion_1.PortadaInformacionComponent },
+                        { path: '/Preguntas', as: 'Preguntas', component: portadapreguntas_1.PortadaPreguntasComponent },
+                        { path: '/Contacto', as: 'Contacto', component: portadacontactenos_1.PortadaContactoComponent },
+                    ]), 
                     __metadata('design:paramtypes', [])
                 ], MoviesComponent);
                 return MoviesComponent;

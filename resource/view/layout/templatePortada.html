@@ -1,13 +1,39 @@
-<div class="col-md-12" >
-   <div class="text-center">
-      Aqui va el template principal de nodezi, headers y footer
-   </div>
-   <div class="text-center">
-      AQUI VA Los enlaces
-   </div>
-   <portada-inicio></portada-inicio>
-   <portada-informacion></portada-informacion>
-   <portada-preguntas></portada-preguntas>
-   <portada-contacto></portada-contacto>
+<div >
+    <div class="top-bar" style="background-color: #7ab510" >
+        <div class="medium-1 columns"></div>
+        <div class="medium-4 columns">
+            <img src="../../../public/images/NODEZI__verde.jpg" alt="company logo" width="100" width="220">
+        </div>
+        <div class="top-bar-right" >
+            <div>
+                <ul class="menu" style="background-color: #7ab510">
+                    <br>
+                    <li>
+                        <input type="search" placeholder="Busqueda">
+                    </li>
+                    <li>
+                        <button type="button" class="button">Search</button>
+                    </li>
+                </ul>
+            </div>
 
+        </div>
+    </div>
 </div>
+
+<div class="menu">
+    <br>
+    <ul class="menu vertical medium-horizontal expanded medium-text-center dropdown" data-responsive-menu="drilldown medium-dropdown" role="menubar" data-responsivemenu="64y97g-responsivemenu" data-dropdownmenu="d6elr1-dropdownmenu">
+        <li><h4> <a [routerLink]="['Inicio']">Inicio</a></h4></li>
+        <li><h4> <a [routerLink]="['Informacion']">Informacion</a></h4></li>
+        <li><h4> <a [routerLink]="['Preguntas']">Preguntas</a></h4></li>
+        <li><h4> <a href="#">Blog</a></h4></li>
+        <li><h4> <a [routerLink]="['Contacto']">Contacto</a></h4></li>
+    </ul>
+</div>
+<div class="row">
+    <hr>
+</div>
+
+<router-outlet></router-outlet>
+
